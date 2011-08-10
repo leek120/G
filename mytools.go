@@ -1,4 +1,4 @@
-package main
+package mytools
 
 import (
 	"os"
@@ -34,7 +34,7 @@ func RenameFiles(root, oldStr, newStr string) {
 			if !d.IsDirectory() && strings.Contains(d.Name, oldStr) {
 				newName := strings.Replace(d.Name, oldStr, newStr, 1)
 				if err2 := os.Rename(d.Name, newName); err2 != nil {
-					println("rename " + d.Name + " to " + newName + " failed: " + err2)
+					println("rename " + d.Name + " to " + newName + " failed: ") // + err2
 				} else {
 					println("rename " + d.Name + " to " + newName + " ok")
 				}
